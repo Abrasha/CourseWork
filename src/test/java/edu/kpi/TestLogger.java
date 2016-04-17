@@ -1,6 +1,8 @@
 package edu.kpi;
 
-import edu.kpi.settings.logger.*;
+import edu.kpi.settings.logger.ConsoleLogger;
+import edu.kpi.settings.logger.FileLogger;
+import edu.kpi.settings.logger.Logger;
 import edu.kpi.settings.logger.decorator.LeveledLogger;
 import edu.kpi.settings.logger.decorator.TimeStampLogger;
 import org.junit.Test;
@@ -16,7 +18,6 @@ public class TestLogger {
         fileLogger.log(Logger.Level.INFO, "File logger created - INFO");
         fileLogger.log(Logger.Level.ERROR, "It errors - ERROR");
         fileLogger.log(Logger.Level.WARN, "It warns - WARN");
-        fileLogger.getPrintStream().close(); // TODO
     }
 
     @Test
@@ -37,7 +38,6 @@ public class TestLogger {
         timeStampFileLogger.log(Logger.Level.INFO, "Timestamp File logger created - INFO");
         timeStampFileLogger.log(Logger.Level.ERROR, "It errors - ERROR");
         timeStampFileLogger.log(Logger.Level.WARN, "It warns - WARN");
-        timeStampFileLogger.getPrintStream().close(); // TODO
 
         final Logger timeStampConsoleLogger = new TimeStampLogger(
                 new ConsoleLogger()
@@ -58,7 +58,6 @@ public class TestLogger {
         leveledFileLogger.log(Logger.Level.INFO, "Leveled File logger created - INFO");
         leveledFileLogger.log(Logger.Level.ERROR, "It errors - ERROR");
         leveledFileLogger.log(Logger.Level.WARN, "It warns - WARN");
-        leveledFileLogger.getPrintStream().close(); // TODO
 
         final Logger leveledConsoleLogger = new LeveledLogger(
                 new ConsoleLogger()
@@ -81,7 +80,6 @@ public class TestLogger {
         leveledTimeStampFileLogger.log(Logger.Level.INFO, "Leveled TimeStamp File logger created - INFO");
         leveledTimeStampFileLogger.log(Logger.Level.ERROR, "It errors - ERROR");
         leveledTimeStampFileLogger.log(Logger.Level.WARN, "It warns - WARN");
-        leveledTimeStampFileLogger.getPrintStream().close(); // TODO
 
         final Logger leveledTimeStampConsoleLogger = new TimeStampLogger(new LeveledLogger(
                 new ConsoleLogger()
