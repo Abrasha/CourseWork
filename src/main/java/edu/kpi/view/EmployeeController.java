@@ -2,6 +2,8 @@ package edu.kpi.view;
 
 import edu.kpi.model.Employee;
 import edu.kpi.service.EmployeeService;
+import edu.kpi.settings.logger.Logger;
+import edu.kpi.settings.logger.mediator.LoggingMediator;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -13,12 +15,17 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 import javax.annotation.PostConstruct;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class EmployeeController implements Initializable {
+
+    @Autowired
+    @Qualifier("loggingMediator")
+    LoggingMediator LOGGER;
 
     @Autowired
     private EmployeeService employeeService;
@@ -46,7 +53,6 @@ public class EmployeeController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         btnAdd.setOnAction(this::btnAddClicked);
         btnRemove.setOnAction(this::btnRemoveClicked);
-
         initTable();
     }
 
@@ -80,6 +86,7 @@ public class EmployeeController implements Initializable {
         employees.setAll(
                 employeeService.findAll()
         );
+        LOGGER.log(Logger.Level.INFO, "EmployeeController @PostConstruct block");
     }
 
     private void btnAddClicked(ActionEvent event) {
@@ -106,8 +113,8 @@ public class EmployeeController implements Initializable {
     private void cleanFields() {
         txtFName.clear();
         txtLName.clear();
-        txtPassportId.clear();
         txtPhone.clear();
+        txtPassportId.clear();
     }
 
 

@@ -2,6 +2,8 @@ package edu.kpi.service;
 
 import edu.kpi.model.Employee;
 import edu.kpi.repository.EmployeeRepository;
+import edu.kpi.settings.logger.Logger;
+import edu.kpi.settings.logger.mediator.LoggingMediator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -17,18 +19,26 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Autowired
     private EmployeeRepository repository;
 
+    @Autowired
+    @Qualifier("loggingMediator")
+    private LoggingMediator LOGGER;
+
     @Override
     public List<Employee> findAll() {
+        LOGGER.log(Logger.Level.INFO, "Searching for all employees.");
         return repository.findAll();
     }
 
     @Override
     public Employee save(Employee employee) {
-        return repository.save(employee);
+        final Employee result = repository.save(employee);
+        LOGGER.log(Logger.Level.INFO, "Employee inserted: " + result.getId());
+        return result;
     }
 
     @Override
     public void remove(Employee employee) {
+        LOGGER.log(Logger.Level.INFO, "Employee to remove: " + employee.getId());
         repository.delete(employee);
     }
 
@@ -48,6 +58,7 @@ public class EmployeeServiceImpl implements EmployeeService {
                 .setPassportId("AG 998654")
                 .build()
         );
+        LOGGER.log(Logger.Level.INFO, "Test data generated.");
     }
 
 }
