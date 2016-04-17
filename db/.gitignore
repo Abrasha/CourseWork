@@ -1,0 +1,4 @@
+*.lck
+/db.log
+/hsqldb.tmp/
+/hsqldb.log
