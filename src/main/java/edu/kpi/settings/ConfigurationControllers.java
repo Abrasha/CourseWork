@@ -1,6 +1,10 @@
 package edu.kpi.settings;
 
 import edu.kpi.Application;
+import edu.kpi.service.EmployeeService;
+import edu.kpi.service.EmployeeServiceImpl;
+import edu.kpi.settings.logger.mediator.LoggingMediator;
+import edu.kpi.settings.logger.mediator.LoggingMediatorImpl;
 import edu.kpi.view.EmployeeController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -10,26 +14,28 @@ import org.springframework.context.annotation.Configuration;
 import java.io.IOException;
 import java.io.InputStream;
 
-/**
- * Date: 27.08.15
- * Time: 11:04
- *
- * @author Ruslan Molchanov (ruslanys@gmail.com)
- * @author http://mruslan.com
- */
 @Configuration
 public class ConfigurationControllers {
+
+    @Bean(name = "loggingMediator")
+    public LoggingMediator loggingMediator() {
+        return LoggingMediatorImpl.getInstance();
+    }
 
     @Bean(name = "employeesView")
     public View getEmployeesView() throws IOException {
         return loadView("fxml/employees.fxml");
     }
 
+    @Bean()
+    public EmployeeService employeeService(){
+        return new EmployeeServiceImpl();
+    }
+
     /**
      * Именно благодаря этому методу мы добавили контроллер в контекст спринга,
      * и заставили его сделать произвести все необходимые инъекции.
      */
-
     @Bean
     public EmployeeController getEmployeesController() throws IOException {
         return (EmployeeController) getEmployeesView().getController();
@@ -40,7 +46,7 @@ public class ConfigurationControllers {
      * Как раз-таки на этом этапе будет создан объект-контроллер,
      * произведены все FXML инъекции и вызван метод инициализации контроллера.
      */
-    protected View loadView(String url) throws IOException {
+    private View loadView(String url) throws IOException {
         InputStream fxmlStream = null;
         try {
             fxmlStream = getClass().getClassLoader().getResourceAsStream(url);
