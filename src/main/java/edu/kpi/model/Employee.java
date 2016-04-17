@@ -1,5 +1,7 @@
 package edu.kpi.model;
 
+import com.google.common.base.Objects;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -72,6 +74,23 @@ public class Employee implements Serializable {
         this.passportId = passportId;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Employee employee = (Employee) o;
+        return Objects.equal(id, employee.id) &&
+                Objects.equal(firstName, employee.firstName) &&
+                Objects.equal(lastName, employee.lastName) &&
+                Objects.equal(phone, employee.phone) &&
+                Objects.equal(passportId, employee.passportId);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(id, firstName, lastName, phone, passportId);
+    }
+
     // TODO Builder Pattern
     public static class EmployeeBuilder {
         private String fName;
@@ -103,5 +122,4 @@ public class Employee implements Serializable {
             return new Employee(this);
         }
     }
-
 }
