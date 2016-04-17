@@ -1,7 +1,7 @@
 package edu.kpi;
 
 import edu.kpi.boot.AbstractJavaFxApplicationSupport;
-import edu.kpi.settings.ConfigurationControllers;
+import edu.kpi.settings.controller.ConfigurationControllers;
 import edu.kpi.settings.logger.Logger;
 import edu.kpi.settings.logger.factory.LoggerFactory;
 import edu.kpi.settings.logger.mediator.LoggingMediator;

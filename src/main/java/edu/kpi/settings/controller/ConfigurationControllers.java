@@ -1,8 +1,6 @@
-package edu.kpi.settings;
+package edu.kpi.settings.controller;
 
 import edu.kpi.Application;
-import edu.kpi.service.EmployeeService;
-import edu.kpi.service.EmployeeServiceImpl;
 import edu.kpi.settings.logger.mediator.LoggingMediator;
 import edu.kpi.settings.logger.mediator.LoggingMediatorImpl;
 import edu.kpi.view.EmployeeController;
@@ -25,11 +23,6 @@ public class ConfigurationControllers {
     @Bean(name = "employeesView")
     public View getEmployeesView() throws IOException {
         return loadView("fxml/employees.fxml");
-    }
-
-    @Bean()
-    public EmployeeService employeeService(){
-        return new EmployeeServiceImpl();
     }
 
     /**
