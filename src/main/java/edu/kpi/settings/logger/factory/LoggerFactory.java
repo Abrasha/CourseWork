@@ -1,6 +1,7 @@
 package edu.kpi.settings.logger.factory;
 
 import edu.kpi.settings.logger.ConsoleLogger;
+import edu.kpi.settings.logger.ConsoleNoBufferLogger;
 import edu.kpi.settings.logger.FileLogger;
 import edu.kpi.settings.logger.Logger;
 import edu.kpi.settings.logger.decorator.LeveledLogger;
@@ -46,6 +47,8 @@ public class LoggerFactory {
         switch (type) {
             case CONSOLE:
                 return LazyConsoleLoggerKeeper.INSTANCE;
+            case CONSOLE_NO_BUFFER:
+                return LazyConsoleNoBufferLoggerKeeper.INSTANCE;
             case FILE:
                 return LazyFileLoggerKeeper.INSTANCE;
             default:
@@ -58,7 +61,7 @@ public class LoggerFactory {
     }
 
     public enum LoggerType {
-        FILE, CONSOLE
+        FILE, CONSOLE, CONSOLE_NO_BUFFER
     }
 
     public enum LoggerAppender {
@@ -81,6 +84,10 @@ public class LoggerFactory {
 
     private static class LazyConsoleLoggerKeeper {
         private static final Logger INSTANCE = new ConsoleLogger();
+    }
+
+    private static class LazyConsoleNoBufferLoggerKeeper {
+        private static final Logger INSTANCE = new ConsoleNoBufferLogger();
     }
 
 }
