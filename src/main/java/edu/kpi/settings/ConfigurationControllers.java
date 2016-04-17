@@ -1,6 +1,6 @@
 package edu.kpi.settings;
 
-import edu.kpi.boot.Application;
+import edu.kpi.Application;
 import edu.kpi.view.EmployeeController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

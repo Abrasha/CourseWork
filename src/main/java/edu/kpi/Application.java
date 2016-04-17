@@ -1,5 +1,6 @@
-package edu.kpi.boot;
+package edu.kpi;
 
+import edu.kpi.boot.AbstractJavaFxApplicationSupport;
 import edu.kpi.settings.ConfigurationControllers;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -13,11 +14,11 @@ import org.springframework.context.annotation.Lazy;
 @SpringBootApplication
 public class Application extends AbstractJavaFxApplicationSupport {
 
-    @Value("${ui.title}")//
+    @Value("${ui.title}")
     private String windowTitle;
 
-    @Qualifier("employeesView")
     @Autowired
+    @Qualifier("employeesView")
     private ConfigurationControllers.View view;
 
     public static void main(String[] args) {

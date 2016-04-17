@@ -18,9 +18,6 @@ import javax.annotation.PostConstruct;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-/**
- * Created by Abrasha on 17-Apr-16.
- */
 public class EmployeeController implements Initializable {
 
     @Autowired
