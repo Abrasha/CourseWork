@@ -24,32 +24,37 @@ import java.util.ResourceBundle;
 public class EmployeeController implements Initializable {
 
     @Autowired
-    EmployeeService employeeService;
+    private EmployeeService employeeService;
 
     @FXML
-    Button btnAdd;
+    private Button btnAdd;
     @FXML
-    Button btnRemove;
+    private Button btnRemove;
 
     @FXML
-    TextField txtFName;
+    private TextField txtFName;
     @FXML
-    TextField txtLName;
+    private TextField txtLName;
     @FXML
-    TextField txtPhone;
+    private TextField txtPhone;
     @FXML
-    TextField txtPassportId;
+    private TextField txtPassportId;
 
     @FXML
-    TableView<Employee> tableEmployees;
+    private TableView<Employee> tableEmployees;
 
-    ObservableList<Employee> employees;
+    private ObservableList<Employee> employees;
 
     @Override
-    @SuppressWarnings("unchecked")
     public void initialize(URL location, ResourceBundle resources) {
         btnAdd.setOnAction(this::btnAddClicked);
         btnRemove.setOnAction(this::btnRemoveClicked);
+
+        initTable();
+    }
+
+    @SuppressWarnings("unchecked")
+    private void initTable() {
 
         employees = FXCollections.observableArrayList();
 
@@ -90,10 +95,7 @@ public class EmployeeController implements Initializable {
         employeeService.save(added);
         employees.add(added);
 
-        txtFName.clear();
-        txtLName.clear();
-        txtPassportId.clear();
-        txtPhone.clear();
+        this.cleanFields();
     }
 
     private void btnRemoveClicked(ActionEvent event) {
@@ -102,6 +104,13 @@ public class EmployeeController implements Initializable {
             employeeService.remove(selected);
             employees.remove(selected);
         }
+    }
+
+    private void cleanFields() {
+        txtFName.clear();
+        txtLName.clear();
+        txtPassportId.clear();
+        txtPhone.clear();
     }
 
 
