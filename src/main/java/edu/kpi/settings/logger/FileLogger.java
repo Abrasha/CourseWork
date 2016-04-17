@@ -5,9 +5,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
 
-/**
- * Created by Abrasha on 17-Apr-16.
- */
 public class FileLogger implements Logger {
 
     private final File destination;
@@ -23,7 +20,7 @@ public class FileLogger implements Logger {
     }
 
     @Override
-    public void log(Level level, String message) throws IOException {
+    public void log(Level level, String message) {
         out.append(message);
         out.println();
     }
