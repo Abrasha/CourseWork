@@ -1,0 +1,54 @@
+2016-04-17T19:13:23.635: Timestamp File logger created - INFO
+2016-04-17T19:13:23.741: It errors - ERROR
+2016-04-17T19:13:23.742: It warns - WARN
+2016-04-17T19:13:35.150: Timestamp File logger created - INFO
+2016-04-17T19:13:35.252: It errors - ERROR
+2016-04-17T19:13:35.252: It warns - WARN
+2016-04-17T19:15:53.122: Timestamp File logger created - INFO
+2016-04-17T19:15:53.209: It errors - ERROR
+2016-04-17T19:15:53.209: It warns - WARN
+File logger created - INFO
+It errors - ERROR
+It warns - WARN
+[INFO]  2016-04-17T19:15:53.214: Leveled TimeStamp File logger created - INFO
+[ERROR] 2016-04-17T19:15:53.215: It errors - ERROR
+[WARN]  2016-04-17T19:15:53.216: It warns - WARN
+[INFO]  Leveled File logger created - INFO
+[ERROR] It errors - ERROR
+[WARN]  It warns - WARN
+2016-04-17T19:17:40.379: Timestamp File logger created - INFO
+2016-04-17T19:17:40.518: It errors - ERROR
+2016-04-17T19:17:40.518: It warns - WARN
+File logger created - INFO
+It errors - ERROR
+It warns - WARN
+[INFO]  2016-04-17T19:17:40.523: Leveled TimeStamp File logger created - INFO
+[ERROR] 2016-04-17T19:17:40.524: It errors - ERROR
+[WARN]  2016-04-17T19:17:40.527: It warns - WARN
+[INFO]  Leveled File logger created - INFO
+[ERROR] It errors - ERROR
+[WARN]  It warns - WARN
+2016-04-17T19:18:20.273: Timestamp File logger created - INFO
+2016-04-17T19:18:20.407: It errors - ERROR
+2016-04-17T19:18:20.408: It warns - WARN
+File logger created - INFO
+It errors - ERROR
+It warns - WARN
+[INFO]  2016-04-17T19:20:42.303: Leveled TimeStamp File logger created - INFO
+[ERROR] 2016-04-17T19:20:52.963: It errors - ERROR
+[WARN]  2016-04-17T19:20:52.963: It warns - WARN
+[INFO]  Leveled File logger created - INFO
+[ERROR] It errors - ERROR
+[WARN]  It warns - WARN
+2016-04-17T19:22:32.516: Timestamp File logger created - INFO
+2016-04-17T19:22:32.628: It errors - ERROR
+2016-04-17T19:22:32.628: It warns - WARN
+File logger created - INFO
+It errors - ERROR
+It warns - WARN
+[INFO]  2016-04-17T19:22:32.636: Leveled TimeStamp File logger created - INFO
+[ERROR] 2016-04-17T19:22:32.638: It errors - ERROR
+[WARN]  2016-04-17T19:22:32.638: It warns - WARN
+[INFO]  Leveled File logger created - INFO
+[ERROR] It errors - ERROR
+[WARN]  It warns - WARN
