@@ -1,5 +1,6 @@
-package ru.habrahabr;
+package edu.kpi;
 
+import edu.kpi.boot.Application;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
