@@ -83,7 +83,7 @@ public class EmployeeController implements Initializable {
 
     @PostConstruct
     private void init() {
-        employees.setAll(
+        employees.addAll(
                 employeeService.findAll()
         );
         LOGGER.log(Logger.Level.INFO, "EmployeeController @PostConstruct block");

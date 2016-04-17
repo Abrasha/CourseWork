@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.annotation.PostConstruct;
 import java.util.List;
 
 @Service
@@ -42,23 +41,23 @@ public class EmployeeServiceImpl implements EmployeeService {
         repository.delete(employee);
     }
 
-    @PostConstruct
-    public void generateTestData() {
-        save(new Employee.EmployeeBuilder()
-                .setFName("Andrew")
-                .setLName("Abramov")
-                .setPhone("9949464")
-                .setPassportId("WF 124124")
-                .build()
-        );
-        save(new Employee.EmployeeBuilder()
-                .setFName("Kirill")
-                .setLName("Ryablo")
-                .setPhone("2352423")
-                .setPassportId("AG 998654")
-                .build()
-        );
-        LOGGER.log(Logger.Level.INFO, "Test data generated.");
-    }
+//    @PostConstruct
+//    public void generateTestData() {
+//        save(new Employee.EmployeeBuilder()
+//                .setFName("Andrew")
+//                .setLName("Abramov")
+//                .setPhone("9949464")
+//                .setPassportId("WF 124124")
+//                .build()
+//        );
+//        save(new Employee.EmployeeBuilder()
+//                .setFName("Kirill")
+//                .setLName("Ryablo")
+//                .setPhone("2352423")
+//                .setPassportId("AG 998654")
+//                .build()
+//        );
+//        LOGGER.log(Logger.Level.INFO, "Test data generated.");
+//    }
 
 }
