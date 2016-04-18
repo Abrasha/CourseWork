@@ -83,7 +83,7 @@ public class EmployeeController implements Initializable {
     }
 
     @PostConstruct
-    private void init() {
+    private void fetchData() {
         employees.addAll(
                 employeeService.findAll()
         );
