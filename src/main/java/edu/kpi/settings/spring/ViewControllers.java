@@ -5,11 +5,13 @@ import edu.kpi.settings.logger.Logger;
 import edu.kpi.settings.logger.mediator.LoggingMediator;
 import edu.kpi.view.EmployeeController;
 import edu.kpi.view.RootController;
+import edu.kpi.view.TaxController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Lazy;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -21,6 +23,7 @@ public class ViewControllers {
     private LoggingMediator LOGGER;
 
     @Bean(name = "employeesView")
+    @Lazy
     public View getEmployeesView() throws IOException {
         LOGGER.log(Logger.Level.INFO, "Bean [EmployeesView] created.");
         return loadView("fxml/employees.fxml");
@@ -30,6 +33,19 @@ public class ViewControllers {
     public View getRootView() throws IOException {
         LOGGER.log(Logger.Level.INFO, "Bean [RootView] created.");
         return loadView("fxml/root.fxml");
+    }
+
+    @Bean(name = "taxesView")
+    @Lazy
+    public View getTaxView() throws IOException {
+        LOGGER.log(Logger.Level.INFO, "Bean [TaxView] created.");
+        return loadView("fxml/tax-reports.fxml");
+    }
+
+    @Bean
+    public TaxController getTaxController() throws IOException {
+        LOGGER.log(Logger.Level.INFO, "Bean [TaxController] created");
+        return (TaxController) getTaxView().getController();
     }
 
     @Bean
