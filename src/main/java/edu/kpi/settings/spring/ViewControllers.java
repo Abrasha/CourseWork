@@ -1,13 +1,13 @@
 package edu.kpi.settings.spring;
 
 import edu.kpi.Application;
-import edu.kpi.settings.logger.factory.LoggerFactory;
+import edu.kpi.settings.logger.Logger;
 import edu.kpi.settings.logger.mediator.LoggingMediator;
-import edu.kpi.settings.logger.mediator.LoggingMediatorImpl;
 import edu.kpi.view.EmployeeController;
 import edu.kpi.view.RootController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -17,31 +17,24 @@ import java.io.InputStream;
 @Configuration
 public class ViewControllers {
 
-    @Bean(name = "loggingMediator")
-    public LoggingMediator loggingMediator() {
-//        LOGGER.log(Logger.Level.INFO, "Bean [LoggingMediator] created.");
-        LoggingMediator result = LoggingMediatorImpl.getInstance();
-        result.addLogger(
-                LoggerFactory.getLogger(LoggerFactory.LoggerType.CONSOLE_NO_BUFFER, LoggerFactory.LoggerAppender.LEVEL)
-        );
-        return result;
-    }
+    @Autowired
+    private LoggingMediator LOGGER;
 
     @Bean(name = "employeesView")
     public View getEmployeesView() throws IOException {
-//        LOGGER.log(Logger.Level.INFO, "Bean [EmployeesView] created.");
+        LOGGER.log(Logger.Level.INFO, "Bean [EmployeesView] created.");
         return loadView("fxml/employees.fxml");
     }
 
     @Bean(name = "rootView")
     public View getRootView() throws IOException {
-//        LOGGER.log(Logger.Level.INFO, "Bean [RootView] created.");
+        LOGGER.log(Logger.Level.INFO, "Bean [RootView] created.");
         return loadView("fxml/root.fxml");
     }
 
     @Bean
     public RootController getRootController() throws IOException {
-//        LOGGER.log(Logger.Level.INFO, "Bean [RootController] created");
+        LOGGER.log(Logger.Level.INFO, "Bean [RootController] created");
         return (RootController) getRootView().getController();
     }
 
@@ -51,10 +44,9 @@ public class ViewControllers {
      */
     @Bean
     public EmployeeController getEmployeesController() throws IOException {
-//        LOGGER.log(Logger.Level.INFO, "Bean [EmployeesController] created");
+        LOGGER.log(Logger.Level.INFO, "Bean [EmployeesController] created");
         return (EmployeeController) getEmployeesView().getController();
     }
-
 
 
     /**
@@ -63,7 +55,7 @@ public class ViewControllers {
      * произведены все FXML инъекции и вызван метод инициализации контроллера.
      */
     private View loadView(String url) throws IOException {
-//        LOGGER.log(Logger.Level.INFO, "View [" + url + "] is loading.");
+        LOGGER.log(Logger.Level.INFO, "View [" + url + "] is loading.");
         InputStream fxmlStream = null;
         try {
             fxmlStream = getClass().getClassLoader().getResourceAsStream(url);

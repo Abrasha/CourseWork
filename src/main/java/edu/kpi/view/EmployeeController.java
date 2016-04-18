@@ -15,7 +15,6 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 
 import javax.annotation.PostConstruct;
 import java.net.URL;
@@ -24,11 +23,13 @@ import java.util.ResourceBundle;
 public class EmployeeController implements Initializable {
 
     @Autowired
-    @Qualifier("loggingMediator")
-    LoggingMediator LOGGER;
+    private LoggingMediator LOGGER;
 
     @Autowired
     private EmployeeService employeeService;
+
+    @Autowired
+    private RootController rootController;
 
     @FXML
     private Button btnAdd;
@@ -87,11 +88,13 @@ public class EmployeeController implements Initializable {
                 employeeService.findAll()
         );
         LOGGER.log(Logger.Level.INFO, "EmployeeController @PostConstruct block");
+        rootController.setStatus("Employees shown.");
     }
 
     private void btnAddClicked(ActionEvent event) {
+        LOGGER.log(Logger.Level.INFO, "Button [Add Employee] clicked.");
         Employee added = new Employee.EmployeeBuilder()
-                .setFName(txtFName.getText())
+                .setFName(txtFName.getText()) // TODO validation
                 .setLName(txtLName.getText())
                 .setPhone(txtPhone.getText())
                 .setPassportId(txtPassportId.getText())
@@ -99,15 +102,21 @@ public class EmployeeController implements Initializable {
         employeeService.save(added);
         employees.add(added);
 
+        rootController.setStatus("New Employee added.");
+
         this.cleanFields();
     }
 
     private void btnRemoveClicked(ActionEvent event) {
+        LOGGER.log(Logger.Level.INFO, "Button [Remove Employee] clicked.");
         Employee selected = tableEmployees.getSelectionModel().getSelectedItem();
         if (selected != null) {
             employeeService.remove(selected);
             employees.remove(selected);
+
+            rootController.setStatus("Employee removed.");
         }
+        rootController.setStatus("No selected Employee to remove.");
     }
 
     private void cleanFields() {
