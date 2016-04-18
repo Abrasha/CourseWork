@@ -17,6 +17,9 @@ public class RootController implements Initializable {
     @Autowired
     private ViewControllers.View employeesView;
 
+    @Autowired
+    private ViewControllers.View taxesView;
+
     @FXML
     private StackPane contentView;
 
@@ -26,14 +29,24 @@ public class RootController implements Initializable {
     @FXML
     private Button btnShowEmployees;
 
+    @FXML
+    private Button btnShowTaxes;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         btnShowEmployees.setOnAction(this::showEmployeesList);
+        btnShowTaxes.setOnAction(this::showTaxedView);
     }
 
     private void showEmployeesList(ActionEvent event) {
         contentView.getChildren().setAll(
                 employeesView.getView()
+        );
+    }
+
+    private void showTaxedView(ActionEvent event) {
+        contentView.getChildren().setAll(
+                taxesView.getView()
         );
     }
 

@@ -50,7 +50,10 @@
                 </TitledPane>
                 <TitledPane animated="false" text="Salaries">
                      <content>
-                        <VBox prefHeight="200.0" prefWidth="100.0" />
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Button fx:id="btnShowTaxes" mnemonicParsing="false" text="Taxes" />
+                           </children></VBox>
                      </content>
                 </TitledPane>
                 <TitledPane animated="false" text="ATM">
