@@ -1,9 +1,9 @@
 package edu.kpi;
 
 import edu.kpi.boot.AbstractJavaFxApplicationSupport;
-import edu.kpi.settings.spring.ViewControllers;
 import edu.kpi.settings.logger.Logger;
 import edu.kpi.settings.logger.mediator.LoggingMediator;
+import edu.kpi.settings.spring.ViewControllers;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.springframework.beans.factory.annotation.Autowired;

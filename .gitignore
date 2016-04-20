@@ -1,5 +1,6 @@
 .idea/
 *.iml
 /target/
+/build
 /db.lck
 /db.log

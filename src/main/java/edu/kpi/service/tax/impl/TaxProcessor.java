@@ -1,6 +1,7 @@
-package edu.kpi.service.tax;
+package edu.kpi.service.tax.impl;
 
 import edu.kpi.model.TaxReport;
+import edu.kpi.service.tax.TaxCalculator;
 
 import java.util.List;
 import java.util.stream.Collectors;

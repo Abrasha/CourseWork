@@ -4,8 +4,8 @@ import edu.kpi.settings.logger.ConsoleLogger;
 import edu.kpi.settings.logger.ConsoleNoBufferLogger;
 import edu.kpi.settings.logger.FileLogger;
 import edu.kpi.settings.logger.Logger;
-import edu.kpi.settings.logger.decorator.LeveledLogger;
-import edu.kpi.settings.logger.decorator.TimeStampLogger;
+import edu.kpi.settings.logger.impl.LeveledLogger;
+import edu.kpi.settings.logger.impl.TimeStampLogger;
 
 import java.io.File;
 import java.io.IOException;

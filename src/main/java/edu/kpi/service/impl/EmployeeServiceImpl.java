@@ -1,7 +1,8 @@
-package edu.kpi.service;
+package edu.kpi.service.impl;
 
 import edu.kpi.model.Employee;
 import edu.kpi.repository.EmployeeRepository;
+import edu.kpi.service.EmployeeService;
 import edu.kpi.settings.logger.Logger;
 import edu.kpi.settings.logger.mediator.LoggingMediator;
 import org.springframework.beans.factory.annotation.Autowired;

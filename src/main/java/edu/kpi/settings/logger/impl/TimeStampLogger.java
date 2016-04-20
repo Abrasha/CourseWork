@@ -1,21 +1,22 @@
-package edu.kpi.settings.logger.decorator;
+package edu.kpi.settings.logger.impl;
 
 import edu.kpi.settings.logger.Logger;
 
 import java.io.PrintStream;
+import java.time.LocalDateTime;
 
 // TODO Decorator Pattern
-public class LeveledLogger implements Logger {
+public class TimeStampLogger implements Logger {
 
     private final Logger logger;
 
-    public LeveledLogger(Logger logger) {
+    public TimeStampLogger(Logger logger) {
         this.logger = logger;
     }
 
     @Override
     public void log(Level level, String message) {
-        String s = String.format("%-7s ", "[" + level.toString() + "]");
+        String s = String.format("%s: ", LocalDateTime.now());
         logger.getPrintStream().append(s);
         logger.log(level, message);
     }

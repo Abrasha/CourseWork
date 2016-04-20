@@ -3,8 +3,8 @@ package edu.kpi;
 import edu.kpi.settings.logger.ConsoleLogger;
 import edu.kpi.settings.logger.FileLogger;
 import edu.kpi.settings.logger.Logger;
-import edu.kpi.settings.logger.decorator.LeveledLogger;
-import edu.kpi.settings.logger.decorator.TimeStampLogger;
+import edu.kpi.settings.logger.impl.LeveledLogger;
+import edu.kpi.settings.logger.impl.TimeStampLogger;
 import org.junit.Test;
 
 import java.io.File;

@@ -1,6 +1,7 @@
-package edu.kpi.settings.logger.mediator;
+package edu.kpi.settings.logger.mediator.impl;
 
 import edu.kpi.settings.logger.Logger;
+import edu.kpi.settings.logger.mediator.LoggingMediator;
 
 import java.util.HashSet;
 import java.util.Objects;
