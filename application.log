@@ -601,3 +601,20 @@ It warns - WARN
 [INFO]  Bean [ATMController] created
 [INFO]  App started.
 [INFO]  Main window is shown.
+[INFO]  Bean [ATMView] created.
+[INFO]  View [fxml/atm.fxml] is loading.
+[INFO]  Bean [RootView] created.
+[INFO]  View [fxml/root.fxml] is loading.
+[INFO]  Bean [TaxController] created
+[INFO]  Bean [TaxView] created.
+[INFO]  View [fxml/tax-reports.fxml] is loading.
+[INFO]  Bean [RootController] created
+[INFO]  Bean [EmployeesView] created.
+[INFO]  View [fxml/employees.fxml] is loading.
+[INFO]  Searching for all employees.
+[INFO]  Bean [EmployeesController] created
+[INFO]  Searching for all employees.
+[INFO]  EmployeeController @PostConstruct block
+[INFO]  Bean [ATMController] created
+[INFO]  App started.
+[INFO]  Main window is shown.
