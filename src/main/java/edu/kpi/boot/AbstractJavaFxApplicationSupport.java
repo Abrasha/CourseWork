@@ -9,7 +9,7 @@ public abstract class AbstractJavaFxApplicationSupport extends Application {
 
     private static String[] savedArgs;
 
-    protected ConfigurableApplicationContext context;
+    private ConfigurableApplicationContext context;
 
     protected static void launchApp(Class<? extends AbstractJavaFxApplicationSupport> appClass, String[] args) {
         AbstractJavaFxApplicationSupport.savedArgs = args;

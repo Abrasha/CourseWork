@@ -8,6 +8,7 @@ import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Stream;
 
+// TODO Mediator|Visitor pattern
 public final class LoggingMediatorImpl implements LoggingMediator {
 
     private static LoggingMediator INSTANCE;

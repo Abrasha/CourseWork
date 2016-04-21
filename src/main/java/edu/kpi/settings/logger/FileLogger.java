@@ -16,7 +16,7 @@ public class FileLogger implements Logger {
         if (!destination.exists())
             destination.createNewFile();
 
-        out = new PrintStream(new FileOutputStream(destination, true)); // true if we want to append to File
+        out = new PrintStream(new FileOutputStream(destination, false)); // true if we want to append to File
     }
 
     @Override

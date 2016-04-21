@@ -3,8 +3,8 @@ package edu.kpi.view;
 import edu.kpi.model.Employee;
 import edu.kpi.model.TaxReport;
 import edu.kpi.service.entities.EmployeeService;
-import edu.kpi.service.tax.impl.SingleTax;
 import edu.kpi.service.tax.TaxCalculator;
+import edu.kpi.service.tax.impl.SingleTax;
 import edu.kpi.service.tax.impl.TaxOnProfits;
 import edu.kpi.service.tax.impl.TaxProcessor;
 import javafx.collections.FXCollections;
@@ -87,7 +87,11 @@ public class TaxController implements Initializable {
             selected.setIncome(event.getNewValue());
             selected.setTax(0);
             selected.setProfit(0);
-            btnProcessTaxesClicked(null); // FIXME
+            this.refreshTable();
+        });
+
+        choiceStrategy.getSelectionModel().selectedItemProperty().addListener(e -> {
+            this.refreshTable();
         });
 
         reportsTable.getColumns().addAll(
@@ -109,6 +113,10 @@ public class TaxController implements Initializable {
     }
 
     private void btnProcessTaxesClicked(ActionEvent event) {
+        this.refreshTable();
+    }
+
+    private void refreshTable() {
         final TaxCalculator calculator = choiceStrategy.getValue() == TaxProcessor.TaxType.PROFIT_TASK ?
                 new TaxOnProfits() : new SingleTax();
 
@@ -117,7 +125,6 @@ public class TaxController implements Initializable {
         );
 
         rootController.setStatus("Taxes were recalculated with: " + choiceStrategy.getValue());
-
     }
 
     private void btnSaveReportsClicked(ActionEvent event) {

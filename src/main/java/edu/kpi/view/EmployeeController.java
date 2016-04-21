@@ -62,19 +62,19 @@ public class EmployeeController implements Initializable {
 
         employees = FXCollections.observableArrayList();
 
-        TableColumn<Employee, String> idCol = new TableColumn<>("ID");
+        final TableColumn<Employee, String> idCol = new TableColumn<>("ID");
         idCol.setCellValueFactory(new PropertyValueFactory<>("id"));
 
-        TableColumn<Employee, String> fNameCol = new TableColumn<>("First name");
+        final TableColumn<Employee, String> fNameCol = new TableColumn<>("First name");
         fNameCol.setCellValueFactory(new PropertyValueFactory<>("firstName"));
 
-        TableColumn<Employee, String> lNameCol = new TableColumn<>("Last name");
+        final TableColumn<Employee, String> lNameCol = new TableColumn<>("Last name");
         lNameCol.setCellValueFactory(new PropertyValueFactory<>("lastName"));
 
-        TableColumn<Employee, String> phoneCol = new TableColumn<>("Phone");
+        final TableColumn<Employee, String> phoneCol = new TableColumn<>("Phone");
         phoneCol.setCellValueFactory(new PropertyValueFactory<>("phone"));
 
-        TableColumn<Employee, String> passportIdCol = new TableColumn<>("Passport ID");
+        final TableColumn<Employee, String> passportIdCol = new TableColumn<>("Passport ID");
         passportIdCol.setCellValueFactory(new PropertyValueFactory<>("passportId"));
 
         tableEmployees.getColumns().setAll(idCol, fNameCol, lNameCol, phoneCol, passportIdCol);
@@ -93,7 +93,7 @@ public class EmployeeController implements Initializable {
 
     private void btnAddClicked(ActionEvent event) {
         LOGGER.log(Logger.Level.INFO, "Button [Add Employee] clicked.");
-        Employee added = new Employee.EmployeeBuilder()
+        final Employee added = new Employee.EmployeeBuilder()
                 .setFName(txtFName.getText()) // TODO validation
                 .setLName(txtLName.getText())
                 .setPhone(txtPhone.getText())
@@ -109,7 +109,7 @@ public class EmployeeController implements Initializable {
 
     private void btnRemoveClicked(ActionEvent event) {
         LOGGER.log(Logger.Level.INFO, "Button [Remove Employee] clicked.");
-        Employee selected = tableEmployees.getSelectionModel().getSelectedItem();
+        final Employee selected = tableEmployees.getSelectionModel().getSelectedItem();
         if (selected != null) {
             employeeService.remove(selected);
             employees.remove(selected);
