@@ -1,7 +1,7 @@
 package edu.kpi.view;
 
 import edu.kpi.model.Employee;
-import edu.kpi.service.EmployeeService;
+import edu.kpi.service.entities.EmployeeService;
 import edu.kpi.settings.logger.Logger;
 import edu.kpi.settings.logger.mediator.LoggingMediator;
 import javafx.collections.FXCollections;
