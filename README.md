@@ -5,5 +5,5 @@ mvn clean package
 
 ### Запуск
 ```
-java -jar target/springboot-javafx-*.jar
+java -jar course-work-2-0.0.1.jar
 ```
