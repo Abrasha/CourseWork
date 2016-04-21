@@ -8,7 +8,8 @@
 [INFO]  Bean [RootController] created
 [INFO]  Bean [EmployeesView] created.
 [INFO]  View [fxml/employees.fxml] is loading.
-[INFO]  Searching for all employees.
+[INFO]  Fetching data...
+[INFO]  Table data fetched.
 [INFO]  Bean [EmployeesController] created
 [INFO]  Searching for all employees.
 [INFO]  EmployeeController @PostConstruct block

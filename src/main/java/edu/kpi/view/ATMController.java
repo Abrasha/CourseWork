@@ -2,6 +2,8 @@ package edu.kpi.view;
 
 import edu.kpi.service.atm.BanknoteProvider;
 import edu.kpi.service.atm.CashProvider;
+import edu.kpi.settings.logger.Logger;
+import edu.kpi.settings.logger.mediator.LoggingMediator;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -15,6 +17,9 @@ import java.util.Map;
 import java.util.ResourceBundle;
 
 public class ATMController implements Initializable {
+
+    @Autowired
+    private LoggingMediator LOGGER;
 
     @FXML
     private TextField tfAmount;
@@ -62,16 +67,16 @@ public class ATMController implements Initializable {
 
     private void btnCashOutClicked(ActionEvent event) {
 
-
         try {
             final int amount = Integer.valueOf(tfAmount.getText());
 
             final Map<BanknoteProvider.Banknote, Integer> result = ATM.getCash(amount);
             populateResult(result);
             txtStatus.setText("Done.");
+            LOGGER.log(Logger.Level.INFO, String.format("ATM worked for %d.", amount));
         } catch (NumberFormatException e) {
             txtStatus.setText("Illegal input. Only Integer is OK.");
-            return;
+            LOGGER.log(Logger.Level.WARN, String.format("Illegal input.%s Only Integer is OK.", tfAmount.getText()));
         }
 
 
