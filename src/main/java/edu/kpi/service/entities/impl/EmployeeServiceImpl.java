@@ -42,6 +42,11 @@ public class EmployeeServiceImpl implements EmployeeService {
         repository.delete(employee);
     }
 
+    @Override
+    public Employee update(Employee employee) {
+        return repository.save(employee);
+    }
+
 //    @PostConstruct
 //    public void generateTestData() {
 //        save(new Employee.EmployeeBuilder()

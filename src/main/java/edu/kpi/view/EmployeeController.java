@@ -14,6 +14,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.cell.TextFieldTableCell;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.annotation.PostConstruct;
@@ -62,20 +63,47 @@ public class EmployeeController implements Initializable {
 
         employees = FXCollections.observableArrayList();
 
+        tableEmployees.setEditable(true);
+
         final TableColumn<Employee, String> idCol = new TableColumn<>("ID");
         idCol.setCellValueFactory(new PropertyValueFactory<>("id"));
+        idCol.setEditable(false);
 
         final TableColumn<Employee, String> fNameCol = new TableColumn<>("First name");
         fNameCol.setCellValueFactory(new PropertyValueFactory<>("firstName"));
+        fNameCol.setCellFactory(TextFieldTableCell.forTableColumn());
+        fNameCol.setOnEditCommit(event -> {
+            final Employee selected = tableEmployees.getSelectionModel().getSelectedItem();
+            selected.setFirstName(event.getNewValue());
+            employeeService.save(selected);
+        });
 
         final TableColumn<Employee, String> lNameCol = new TableColumn<>("Last name");
         lNameCol.setCellValueFactory(new PropertyValueFactory<>("lastName"));
+        lNameCol.setCellFactory(TextFieldTableCell.forTableColumn());
+        lNameCol.setOnEditCommit(event -> {
+            final Employee selected = tableEmployees.getSelectionModel().getSelectedItem();
+            selected.setLastName(event.getNewValue());
+            employeeService.save(selected);
+        });
 
         final TableColumn<Employee, String> phoneCol = new TableColumn<>("Phone");
         phoneCol.setCellValueFactory(new PropertyValueFactory<>("phone"));
+        phoneCol.setCellFactory(TextFieldTableCell.forTableColumn());
+        phoneCol.setOnEditCommit(event -> {
+            final Employee selected = tableEmployees.getSelectionModel().getSelectedItem();
+            selected.setPhone(event.getNewValue());
+            employeeService.save(selected);
+        });
 
         final TableColumn<Employee, String> passportIdCol = new TableColumn<>("Passport ID");
         passportIdCol.setCellValueFactory(new PropertyValueFactory<>("passportId"));
+        passportIdCol.setCellFactory(TextFieldTableCell.forTableColumn());
+        passportIdCol.setOnEditCommit(event -> {
+            final Employee selected = tableEmployees.getSelectionModel().getSelectedItem();
+            selected.setPassportId(event.getNewValue());
+            employeeService.save(selected);
+        });
 
         tableEmployees.getColumns().setAll(idCol, fNameCol, lNameCol, phoneCol, passportIdCol);
 
