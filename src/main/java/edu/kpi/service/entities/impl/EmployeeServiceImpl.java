@@ -47,23 +47,4 @@ public class EmployeeServiceImpl implements EmployeeService {
         return repository.save(employee);
     }
 
-//    @PostConstruct
-//    public void generateTestData() {
-//        save(new Employee.EmployeeBuilder()
-//                .setFName("Andrew")
-//                .setLName("Abramov")
-//                .setPhone("9949464")
-//                .setPassportId("WF 124124")
-//                .build()
-//        );
-//        save(new Employee.EmployeeBuilder()
-//                .setFName("Kirill")
-//                .setLName("Ryablo")
-//                .setPhone("2352423")
-//                .setPassportId("AG 998654")
-//                .build()
-//        );
-//        LOGGER.log(Logger.Level.INFO, "Test data generated.");
-//    }
-
 }
