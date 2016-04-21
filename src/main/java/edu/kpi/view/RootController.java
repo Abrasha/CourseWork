@@ -20,6 +20,9 @@ public class RootController implements Initializable {
     @Autowired
     private ViewControllers.View taxesView;
 
+    @Autowired
+    private ViewControllers.View atmView;
+
     @FXML
     private StackPane contentView;
 
@@ -32,10 +35,14 @@ public class RootController implements Initializable {
     @FXML
     private Button btnShowTaxes;
 
+    @FXML
+    private Button btnGetCash;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         btnShowEmployees.setOnAction(this::showEmployeesList);
         btnShowTaxes.setOnAction(this::showTaxedView);
+        btnGetCash.setOnAction(this::showATM);
     }
 
     private void showEmployeesList(ActionEvent event) {
@@ -49,6 +56,13 @@ public class RootController implements Initializable {
                 taxesView.getView()
         );
     }
+
+    private void showATM(ActionEvent event) {
+        contentView.getChildren().setAll(
+                atmView.getView()
+        );
+    }
+
 
     public void setStatus(String message) {
         this.statusLabel.setText(message);

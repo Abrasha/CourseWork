@@ -3,6 +3,7 @@ package edu.kpi.settings.spring;
 import edu.kpi.Application;
 import edu.kpi.settings.logger.Logger;
 import edu.kpi.settings.logger.mediator.LoggingMediator;
+import edu.kpi.view.ATMController;
 import edu.kpi.view.EmployeeController;
 import edu.kpi.view.RootController;
 import edu.kpi.view.TaxController;
@@ -27,6 +28,12 @@ public class ViewControllers {
     public View getEmployeesView() throws IOException {
         LOGGER.log(Logger.Level.INFO, "Bean [EmployeesView] created.");
         return loadView("fxml/employees.fxml");
+    }
+
+    @Bean(name = "atmView")
+    public View getATMView() throws IOException {
+        LOGGER.log(Logger.Level.INFO, "Bean [ATMView] created.");
+        return loadView("fxml/atm.fxml");
     }
 
     @Bean(name = "rootView")
@@ -62,6 +69,12 @@ public class ViewControllers {
     public EmployeeController getEmployeesController() throws IOException {
         LOGGER.log(Logger.Level.INFO, "Bean [EmployeesController] created");
         return (EmployeeController) getEmployeesView().getController();
+    }
+
+    @Bean
+    public ATMController getATMController() throws IOException {
+        LOGGER.log(Logger.Level.INFO, "Bean [ATMController] created");
+        return (ATMController) getATMView().getController();
     }
 
 

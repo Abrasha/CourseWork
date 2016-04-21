@@ -2,7 +2,7 @@ package edu.kpi.view;
 
 import edu.kpi.model.Employee;
 import edu.kpi.model.TaxReport;
-import edu.kpi.service.EmployeeService;
+import edu.kpi.service.entities.EmployeeService;
 import edu.kpi.service.tax.impl.SingleTax;
 import edu.kpi.service.tax.TaxCalculator;
 import edu.kpi.service.tax.impl.TaxOnProfits;
