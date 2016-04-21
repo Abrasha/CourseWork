@@ -1,4 +1,4 @@
-package edu.kpi.service;
+package edu.kpi.service.entities;
 
 import edu.kpi.model.Employee;
 
