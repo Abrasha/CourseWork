@@ -1,10 +1,10 @@
 package edu.kpi.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.time.Month;
 
 @Entity
+@Table(name = "tax_reports")
 public class TaxReport {
 
     @Id
@@ -15,6 +15,10 @@ public class TaxReport {
     private int tax;
     private int profit;
 
+    @Enumerated(EnumType.ORDINAL)
+    private Month month;
+
+    @ManyToOne
     private Employee forEmployee;
 
     public TaxReport(int income, int tax, int profit, Employee forEmployee) {
@@ -29,6 +33,15 @@ public class TaxReport {
     }
 
     public TaxReport() {
+    }
+
+
+    public Month getMonth() {
+        return month;
+    }
+
+    public void setMonth(Month month) {
+        this.month = month;
     }
 
     public Employee getForEmployee() {
@@ -86,6 +99,7 @@ public class TaxReport {
                 ", income=" + income +
                 ", tax=" + tax +
                 ", profit=" + profit +
+                ", month=" + month +
                 ", forEmployee=" + forEmployee +
                 '}';
     }
