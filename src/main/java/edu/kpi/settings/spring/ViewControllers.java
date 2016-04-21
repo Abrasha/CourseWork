@@ -3,10 +3,7 @@ package edu.kpi.settings.spring;
 import edu.kpi.Application;
 import edu.kpi.settings.logger.Logger;
 import edu.kpi.settings.logger.mediator.LoggingMediator;
-import edu.kpi.view.ATMController;
-import edu.kpi.view.EmployeeController;
-import edu.kpi.view.RootController;
-import edu.kpi.view.TaxController;
+import edu.kpi.view.*;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,30 +20,46 @@ public class ViewControllers {
     @Autowired
     private LoggingMediator LOGGER;
 
-    @Bean(name = "employeesView")
     @Lazy
+    @Bean(name = "employeesView")
     public View getEmployeesView() throws IOException {
         LOGGER.log(Logger.Level.INFO, "Bean [EmployeesView] created.");
         return loadView("fxml/employees.fxml");
     }
 
+    @Lazy
     @Bean(name = "atmView")
     public View getATMView() throws IOException {
         LOGGER.log(Logger.Level.INFO, "Bean [ATMView] created.");
         return loadView("fxml/atm.fxml");
     }
 
+    @Lazy
+    @Bean(name = "loginView")
+    public View getLoginView() throws IOException {
+        LOGGER.log(Logger.Level.INFO, "Bean [LoginView] created.");
+        return loadView("fxml/login.fxml");
+    }
+
+    @Lazy
     @Bean(name = "rootView")
     public View getRootView() throws IOException {
         LOGGER.log(Logger.Level.INFO, "Bean [RootView] created.");
         return loadView("fxml/root.fxml");
     }
 
-    @Bean(name = "taxesView")
     @Lazy
+    @Bean(name = "taxesView")
     public View getTaxView() throws IOException {
         LOGGER.log(Logger.Level.INFO, "Bean [TaxView] created.");
         return loadView("fxml/tax-reports.fxml");
+    }
+
+    @Lazy
+    @Bean(name = "usersView")
+    public View getUsersView() throws IOException {
+        LOGGER.log(Logger.Level.INFO, "Bean [UsersView] created.");
+        return loadView("fxml/users.fxml");
     }
 
     @Bean
@@ -56,9 +69,21 @@ public class ViewControllers {
     }
 
     @Bean
+    public UsersController getUsersController() throws IOException {
+        LOGGER.log(Logger.Level.INFO, "Bean [UsersController] created");
+        return (UsersController) getUsersView().getController();
+    }
+
+    @Bean
     public RootController getRootController() throws IOException {
         LOGGER.log(Logger.Level.INFO, "Bean [RootController] created");
         return (RootController) getRootView().getController();
+    }
+
+    @Bean
+    public LoginController getLoginController() throws IOException {
+        LOGGER.log(Logger.Level.INFO, "Bean [LoginController] created");
+        return (LoginController) getLoginView().getController();
     }
 
     /**

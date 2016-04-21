@@ -1,15 +1,21 @@
-[INFO]  Bean [ATMView] created.
-[INFO]  View [fxml/atm.fxml] is loading.
-[INFO]  Bean [RootView] created.
-[INFO]  View [fxml/root.fxml] is loading.
-[INFO]  Bean [TaxController] created
-[INFO]  Bean [TaxView] created.
-[INFO]  View [fxml/tax-reports.fxml] is loading.
-[INFO]  Bean [RootController] created
 [INFO]  Bean [EmployeesView] created.
 [INFO]  View [fxml/employees.fxml] is loading.
+[INFO]  Bean [ATMView] created.
+[INFO]  View [fxml/atm.fxml] is loading.
+[INFO]  Bean [LoginView] created.
+[INFO]  View [fxml/login.fxml] is loading.
+[INFO]  Bean [RootView] created.
+[INFO]  View [fxml/root.fxml] is loading.
+[INFO]  Bean [TaxView] created.
+[INFO]  View [fxml/tax-reports.fxml] is loading.
+[INFO]  Bean [UsersView] created.
+[INFO]  View [fxml/users.fxml] is loading.
+[INFO]  Bean [RootController] created
+[INFO]  Bean [TaxController] created
 [INFO]  Fetching data...
 [INFO]  Table data fetched.
+[INFO]  Bean [UsersController] created
+[INFO]  Bean [LoginController] created
 [INFO]  Bean [EmployeesController] created
 [INFO]  Searching for all employees.
 [INFO]  EmployeeController @PostConstruct block

@@ -1,11 +1,12 @@
 package edu.kpi.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.time.Month;
 
 @Entity
 @Table(name = "tax_reports")
-public class TaxReport {
+public class TaxReport implements Serializable {
 
     @Id
     @GeneratedValue
