@@ -103,11 +103,6 @@ public class ViewControllers {
     }
 
 
-    /**
-     * Самый обыкновенный способ использовать FXML загрузчик.
-     * Как раз-таки на этом этапе будет создан объект-контроллер,
-     * произведены все FXML инъекции и вызван метод инициализации контроллера.
-     */
     private View loadView(String url) throws IOException {
         LOGGER.log(Logger.Level.INFO, "View [" + url + "] is loading.");
         InputStream fxmlStream = null;

@@ -1,7 +1,7 @@
 package edu.kpi;
 
-import edu.kpi.settings.logger.ConsoleLogger;
-import edu.kpi.settings.logger.FileLogger;
+import edu.kpi.settings.logger.impl.ConsoleLogger;
+import edu.kpi.settings.logger.impl.FileLogger;
 import edu.kpi.settings.logger.Logger;
 import edu.kpi.settings.logger.impl.LeveledLogger;
 import edu.kpi.settings.logger.impl.TimeStampLogger;

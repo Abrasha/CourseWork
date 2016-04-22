@@ -1,5 +1,6 @@
 package edu.kpi.view;
 
+import com.aquafx_project.AquaFx;
 import edu.kpi.settings.logger.Logger;
 import edu.kpi.settings.logger.mediator.LoggingMediator;
 import edu.kpi.settings.spring.ViewControllers;
@@ -45,13 +46,10 @@ public class RootController implements Initializable {
 
     @FXML
     private Button btnEmployees;
-
     @FXML
     private Button btnTaxes;
-
     @FXML
     private Button btnATM;
-
     @FXML
     private Button btnUsers;
 
@@ -59,6 +57,12 @@ public class RootController implements Initializable {
     private MenuItem miLogout;
     @FXML
     private MenuItem miExit;
+    @FXML
+    private MenuItem miEarth;
+    @FXML
+    private MenuItem miFire;
+    @FXML
+    private MenuItem miAir;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -69,6 +73,9 @@ public class RootController implements Initializable {
         btnUsers.setOnAction(this::showUsers);
         miLogout.setOnAction(this::miLogoutClicked);
         miExit.setOnAction(this::miExitClicked);
+        miAir.setOnAction(e -> AquaFx.setAirStyle());
+        miFire.setOnAction(e -> AquaFx.setFireStyle());
+        miEarth.setOnAction(e -> AquaFx.setEarthStyle());
     }
 
     private void miLogoutClicked(ActionEvent event) {
@@ -129,7 +136,6 @@ public class RootController implements Initializable {
 
 
     public void setStatus(String message) {
-
         LOGGER.log(Logger.Level.INFO, "New Status label content: " + message);
         this.statusLabel.setText(message);
     }

@@ -1,13 +1,15 @@
-package edu.kpi.settings.logger;
+package edu.kpi.settings.logger.impl;
+
+import edu.kpi.settings.logger.Logger;
 
 import java.io.PrintStream;
 
-public class ConsoleLogger implements Logger {
+public class ConsoleNoBufferLogger implements Logger {
 
     private final PrintStream out;
 
-    public ConsoleLogger() {
-        this.out = System.out;
+    public ConsoleNoBufferLogger() {
+        this.out = System.err;
     }
 
     @Override

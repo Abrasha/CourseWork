@@ -1,4 +1,6 @@
-package edu.kpi.settings.logger;
+package edu.kpi.settings.logger.impl;
+
+import edu.kpi.settings.logger.Logger;
 
 import java.io.File;
 import java.io.FileOutputStream;

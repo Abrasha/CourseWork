@@ -56,7 +56,7 @@ public class LoginController implements Initializable {
     }
 
     private void btnLoginClicked(ActionEvent event) {
-        LOGGER.log(Logger.Level.INFO, "Trying to log in...");
+        LOGGER.log(Logger.Level.INFO, "Trying to authenticate...");
         this.authenticate();
     }
 
@@ -65,6 +65,7 @@ public class LoginController implements Initializable {
         final String password = txtPassword.getText();
 
         final User user = userService.authenticate(username, password);
+
         if (Objects.isNull(user)) {
             LOGGER.log(Logger.Level.INFO, "Authentication failed.");
             onLoginFail();

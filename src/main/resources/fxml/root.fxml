@@ -22,7 +22,17 @@
                         <MenuItem fx:id="miExit" mnemonicParsing="false" text="Exit" />
                             </items>
                         </Menu>
+                  <Menu mnemonicParsing="false" text="Set style...">
+                     <items>
+                        <MenuItem fx:id="miEarth" mnemonicParsing="false" text="Earth" />
+                        <MenuItem fx:id="miAir" mnemonicParsing="false" text="Air" />
+                        <MenuItem fx:id="miFire" mnemonicParsing="false" text="Fire" />
+                     </items>
+                  </Menu>
                     </menus>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
                 </MenuBar>
             </top>
             <left>

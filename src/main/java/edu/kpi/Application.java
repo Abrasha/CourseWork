@@ -1,5 +1,6 @@
 package edu.kpi;
 
+import com.aquafx_project.AquaFx;
 import edu.kpi.boot.AbstractJavaFxApplicationSupport;
 import edu.kpi.settings.logger.Logger;
 import edu.kpi.settings.logger.mediator.LoggingMediator;
@@ -36,7 +37,6 @@ public class Application extends AbstractJavaFxApplicationSupport {
     @Override
     public void start(Stage stage) throws Exception {
 
-
         LOGGER.log(Logger.Level.INFO, "App started.");
         stage.setTitle(windowTitle);
         rootController.setContent(loginView.getView());
@@ -46,6 +46,9 @@ public class Application extends AbstractJavaFxApplicationSupport {
 
         stage.setResizable(true);
         stage.centerOnScreen();
+
+        AquaFx.setFireStyle();
+
         stage.show();
         LOGGER.log(Logger.Level.INFO, "Main window is shown.");
     }
