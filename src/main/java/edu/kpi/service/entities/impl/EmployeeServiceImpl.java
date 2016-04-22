@@ -44,6 +44,8 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public Employee update(Employee employee) {
+
+        LOGGER.log(Logger.Level.INFO, "Updating Employee with id: " + employee.getId());
         return repository.save(employee);
     }
 

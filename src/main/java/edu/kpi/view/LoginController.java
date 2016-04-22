@@ -2,11 +2,16 @@ package edu.kpi.view;
 
 import edu.kpi.model.User;
 import edu.kpi.service.entities.UserService;
+import edu.kpi.settings.logger.Logger;
+import edu.kpi.settings.logger.mediator.LoggingMediator;
 import edu.kpi.settings.spring.ViewControllers;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.net.URL;
@@ -23,6 +28,9 @@ public class LoginController implements Initializable {
 
     @Autowired
     private ViewControllers.View employeesView;
+
+    @Autowired
+    private LoggingMediator LOGGER;
 
     @FXML
     private TextField txtLogin;
@@ -48,6 +56,7 @@ public class LoginController implements Initializable {
     }
 
     private void btnLoginClicked(ActionEvent event) {
+        LOGGER.log(Logger.Level.INFO, "Trying to log in...");
         this.authenticate();
     }
 
@@ -57,8 +66,10 @@ public class LoginController implements Initializable {
 
         final User user = userService.authenticate(username, password);
         if (Objects.isNull(user)) {
+            LOGGER.log(Logger.Level.INFO, "Authentication failed.");
             onLoginFail();
         } else {
+            LOGGER.log(Logger.Level.INFO, "Authentication success.");
             rootController.setContent(employeesView.getView());
             rootController.setAuthenticated(true);
         }
@@ -70,6 +81,7 @@ public class LoginController implements Initializable {
     }
 
     private void btnClearClicked(ActionEvent event) {
+        LOGGER.log(Logger.Level.INFO, "Login fields cleared.");
         txtLogin.clear();
         txtPassword.clear();
     }

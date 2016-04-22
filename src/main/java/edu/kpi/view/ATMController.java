@@ -21,6 +21,9 @@ public class ATMController implements Initializable {
     @Autowired
     private LoggingMediator LOGGER;
 
+    @Autowired
+    private RootController rootController;
+
     @FXML
     private TextField tfAmount;
 

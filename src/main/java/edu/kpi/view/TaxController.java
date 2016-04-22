@@ -76,7 +76,9 @@ public class TaxController implements Initializable {
 
     @PostConstruct
     private void fetchData() {
+        LOGGER.log(Logger.Level.INFO, "Trying tp fetch Taxed data...");
         loadDataWithMonth();
+        LOGGER.log(Logger.Level.INFO, "Taxes data fetched");
         rootController.setStatus("Data was initialized to Taxes Table");
     }
 
@@ -102,6 +104,7 @@ public class TaxController implements Initializable {
             selected.setIncome(event.getNewValue());
             selected.setTax(0);
             selected.setProfit(0);
+
             this.recalculateTaxes();
         });
 
@@ -161,6 +164,7 @@ public class TaxController implements Initializable {
         }
 
         LOGGER.log(Logger.Level.INFO, "Table data fetched.");
+        rootController.setStatus("Data fetched.");
 
     }
 
@@ -179,6 +183,7 @@ public class TaxController implements Initializable {
 
     private List<TaxReport> generateNewReports() {
         LOGGER.log(Logger.Level.INFO, "Generating new reports...");
+        rootController.setStatus("New reports generated.");
         return employeeService.findAll()
                 .stream()
                 .map(TaxReport::new)
@@ -200,6 +205,7 @@ public class TaxController implements Initializable {
         reportsService.update(reportsToSave);
 
         LOGGER.log(Logger.Level.INFO, "Tax reports saved.");
+        rootController.setStatus("Reports were saved.");
     }
 
     private void btnNewClicked(ActionEvent e) {
@@ -212,6 +218,7 @@ public class TaxController implements Initializable {
         final Month month = choiceMonth.getSelectionModel().getSelectedItem();
         reportsService.removeAllWithinMonth(month);
         this.items.setAll(generateNewReports());
+        rootController.setStatus(String.format("Reports within %s Month were removed", month));
     }
 
     private void btnProcessTaxesClicked(ActionEvent event) {

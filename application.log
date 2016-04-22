@@ -12,13 +12,51 @@
 [INFO]  View [fxml/users.fxml] is loading.
 [INFO]  Bean [RootController] created
 [INFO]  Bean [TaxController] created
+[INFO]  Trying tp fetch Taxed data...
 [INFO]  Fetching data...
+[INFO]  Getting TaxReports by Month: JANUARY
 [INFO]  Table data fetched.
+[INFO]  New Status label content: Data fetched.
+[INFO]  Taxes data fetched
+[INFO]  New Status label content: Data was initialized to Taxes Table
 [INFO]  Bean [UsersController] created
+[INFO]  Trying to fetch User data...
+[INFO]  Fetching all Users.
+[INFO]  User data fetched.
+[INFO]  New Status label content: Data fetched.
 [INFO]  Bean [LoginController] created
 [INFO]  Bean [EmployeesController] created
 [INFO]  Searching for all employees.
 [INFO]  EmployeeController @PostConstruct block
+[INFO]  New Status label content: Employees shown.
 [INFO]  Bean [ATMController] created
 [INFO]  App started.
+[INFO]  Content changed
+[INFO]  New Status label content: Content changed.
 [INFO]  Main window is shown.
+[INFO]  Trying to log in...
+[INFO]  Authentication success.
+[INFO]  Content changed
+[INFO]  New Status label content: Content changed.
+[INFO]  Menu visibility: true
+[INFO]  New Status label content: User is authenticated: true
+[INFO]  Setting Taxed view...
+[INFO]  New Status label content: Taxed view set.
+[INFO]  Recalculating taxes.
+[INFO]  New Status label content: Taxes were recalculated with: SINGLE_TAX
+[INFO]  Fetching data...
+[INFO]  Getting TaxReports by Month: MAY
+[INFO]  Generating new reports...
+[INFO]  New Status label content: New reports generated.
+[INFO]  Searching for all employees.
+[INFO]  Table data fetched.
+[INFO]  New Status label content: Data fetched.
+[INFO]  Button remove reports clicked.
+[INFO]  Removing TaxReports by Month: MAY
+[INFO]  Generating new reports...
+[INFO]  New Status label content: New reports generated.
+[INFO]  Searching for all employees.
+[INFO]  New Status label content: Reports within MAY Month were removed
+[INFO]  Button process taxes clicked.
+[INFO]  Recalculating taxes.
+[INFO]  New Status label content: Taxes were recalculated with: PROFIT_TASK

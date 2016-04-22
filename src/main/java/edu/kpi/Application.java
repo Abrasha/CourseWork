@@ -42,6 +42,7 @@ public class Application extends AbstractJavaFxApplicationSupport {
         rootController.setContent(loginView.getView());
 
         stage.setScene(new Scene(rootView.getView()));
+        rootController.setStatus("Login view set.");
 
         stage.setResizable(true);
         stage.centerOnScreen();
