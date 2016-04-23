@@ -41,6 +41,8 @@
 [INFO]  New Status label content: Content changed.
 [INFO]  Menu visibility: true
 [INFO]  New Status label content: User is authenticated: true
-[INFO]  Setting Users view...
-[INFO]  New Status label content: Users view set.
-[INFO]  Setting Employees view...
+[INFO]  Button [Add Employee] clicked.
+[INFO]  Employee inserted: 6
+[INFO]  New Status label content: New Employee added.
+[INFO]  Setting ATM view...
+[INFO]  New Status label content: ATM view set.

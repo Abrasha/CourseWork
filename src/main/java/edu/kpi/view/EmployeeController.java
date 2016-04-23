@@ -122,7 +122,7 @@ public class EmployeeController implements Initializable {
     private void btnAddClicked(ActionEvent event) {
         LOGGER.log(Logger.Level.INFO, "Button [Add Employee] clicked.");
         final Employee added = new Employee.EmployeeBuilder()
-                .setFName(txtFName.getText()) // TODO validation
+                .setFName(txtFName.getText())
                 .setLName(txtLName.getText())
                 .setPhone(txtPhone.getText())
                 .setPassportId(txtPassportId.getText())
