@@ -30,12 +30,12 @@ public class Application extends AbstractJavaFxApplicationSupport {
     @Autowired
     private RootController rootController;
 
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         launchApp(Application.class, args);
     }
 
     @Override
-    public void start(Stage stage) throws Exception {
+    public void start(final Stage stage) throws Exception {
 
         LOGGER.log(Logger.Level.INFO, "App started.");
         stage.setTitle(windowTitle);

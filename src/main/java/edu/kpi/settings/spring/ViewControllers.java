@@ -1,6 +1,5 @@
 package edu.kpi.settings.spring;
 
-import edu.kpi.Application;
 import edu.kpi.settings.logger.Logger;
 import edu.kpi.settings.logger.mediator.LoggingMediator;
 import edu.kpi.view.*;
@@ -86,10 +85,6 @@ public class ViewControllers {
         return (LoginController) getLoginView().getController();
     }
 
-    /**
-     * Именно благодаря этому методу мы добавили контроллер в контекст спринга,
-     * и заставили его сделать произвести все необходимые инъекции.
-     */
     @Bean
     public EmployeeController getEmployeesController() throws IOException {
         LOGGER.log(Logger.Level.INFO, "Bean [EmployeesController] created");
@@ -118,10 +113,6 @@ public class ViewControllers {
         }
     }
 
-    /**
-     * Класс - оболочка: контроллер мы обязаны указать в качестве бина,
-     * а view - представление, нам предстоит использовать в точке входа {@link Application}.
-     */
     public class View {
         private Parent view;
         private Object controller;
