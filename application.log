@@ -35,14 +35,3 @@
 [INFO]  New Status label content: Content changed.
 [INFO]  New Status label content: Login view set.
 [INFO]  Main window is shown.
-[INFO]  Trying to authenticate...
-[INFO]  Authentication success.
-[INFO]  Content changed
-[INFO]  New Status label content: Content changed.
-[INFO]  Menu visibility: true
-[INFO]  New Status label content: User is authenticated: true
-[INFO]  Button [Add Employee] clicked.
-[INFO]  Employee inserted: 6
-[INFO]  New Status label content: New Employee added.
-[INFO]  Setting ATM view...
-[INFO]  New Status label content: ATM view set.

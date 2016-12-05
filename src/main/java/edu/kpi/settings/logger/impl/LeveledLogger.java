@@ -4,7 +4,6 @@ import edu.kpi.settings.logger.Logger;
 
 import java.io.PrintStream;
 
-// TODO Decorator Pattern
 public class LeveledLogger implements Logger {
 
     private final Logger logger;

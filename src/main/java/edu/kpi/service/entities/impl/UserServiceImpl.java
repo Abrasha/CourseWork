@@ -51,21 +51,18 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void deleteUser(User user) {
-
         LOGGER.log(Logger.Level.INFO, "Deleting User: " + user.getUsername());
         userRepository.delete(user);
     }
 
     @Override
     public boolean userExists(String username) {
-
         LOGGER.log(Logger.Level.INFO, "Checking whether the user exists: " + username);
         return userRepository.findFirstByUsername(username) != null;
     }
 
     @Override
     public List<User> getAll() {
-
         LOGGER.log(Logger.Level.INFO, "Fetching all Users.");
         return userRepository.findAll();
     }

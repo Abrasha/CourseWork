@@ -30,13 +30,13 @@
             <artifactId>spring-boot-starter</artifactId>
         </dependency>
 
-        <!-- Spring Boot JPA - для работы с БД, очевидно -->
+        <!-- Spring Boot JPA  -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
 
-        <!-- H2 БД -->
+        <!-- H2 database -->
         <dependency>
             <groupId>org.hsqldb</groupId>
             <artifactId>hsqldb</artifactId>
@@ -49,7 +49,7 @@
             <version>18.0</version>
         </dependency>
 
-        <!-- Тесты -->
+        <!-- Tests -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
