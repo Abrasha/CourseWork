@@ -1,11 +1,11 @@
-##PDD - Pattern Driver Development
+##PDD - Pattern Driven Development
 
-### Сборка
+### Assemble
 ```
 mvn clean package
 ```
 
-### Запуск
+### Launch
 ```
 java -jar course-work-2-0.0.1.jar
 ```
