@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<StackPane prefHeight="459.0" prefWidth="749.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.kpi.view.TaxController">
+<StackPane prefHeight="459.0" prefWidth="749.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.aabramov.view.TaxController">
     <children>
         <GridPane alignment="TOP_CENTER" hgap="5.0" vgap="5.0">
             <columnConstraints>

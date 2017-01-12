@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-<StackPane prefHeight="406.0" prefWidth="496.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.kpi.view.EmployeeController">
+<StackPane prefHeight="406.0" prefWidth="496.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.aabramov.view.EmployeeController">
    <children>
       <VBox prefHeight="200.0" prefWidth="100.0">
          <children>
